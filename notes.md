@@ -51,3 +51,15 @@ gets cluttered
 * It should return a dict with keys = desired object names, value = object
 * Decorate function with *app.shell_context_processor*
 * objects can be db, models (User, Post etc...) and remember to import them at the top of the file
+# User Login
+## Password hashing
+1. werkzeug.security functions
+* generate hash: generate_password_hash('password')
+* check password: check_password_hash(hash, 'passwordtotest')
+1. Integrate werkzeug in SA User model
+* create a set_password method populating self.password_hash (using generate_password_hash)
+* create a check_password method returning boolean (using check_password_hash)
+1. Backend user creation workflow
+* create user: u = User(username='john', email='john@test.com')
+* set hash (user creation): u.set_password('thepassword')
+* check hash (user login): u.check_password('thepasswordtocheck')
