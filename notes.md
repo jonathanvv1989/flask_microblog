@@ -42,6 +42,7 @@ class MyTestForm(FlaskForm):
 * span: used for styling inline element
 ## Miscellaneous
 * br: carriage-return
+* hr: horizontal rule (thematic break)
 ## Backend view function
 1. **@app.route attribute**
 * methods: list of methods accepted by end point (e.g. ['GET', 'POST'])
@@ -91,3 +92,11 @@ class MyTestForm(FlaskForm):
 * create user: u = User(username='john', email='john@test.com')
 * set hash (user creation): u.set_password('thepassword')
 * check hash (user login): u.check_password('thepasswordtocheck')
+
+* db query: filter_by, all/first/first_or_404
+* endpoints with arguments (decorator, how use url_for and normal url)
+* Jinja2 subtemplate use `_xx.html` for ref in name and use {% include `__xx.html` %} in target template
+* before_request view function run before each endpoint
+* populate validators (new here is length with min and max -> good for text area)
+* section for jinja commands (control statement if for etc...), extend/include
+* info about validate on submit
